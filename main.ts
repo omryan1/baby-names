@@ -1,6 +1,6 @@
 function pickNames (gender: string, letters: number) {
-    numberOfNames = 0
     if (gender == "g") {
+        numberOfNames = 0
         for (let index = 0; index <= girlList.length - 1; index++) {
             if (letters == girlList[index].length) {
                 game.splash(girlList[index])
@@ -8,8 +8,9 @@ function pickNames (gender: string, letters: number) {
             }
         }
         if (numberOfNames == 0) {
-            game.splash("No name found")
+            game.splash("No names found")
         }
+        game.splash("Resetting generator...")
         game.reset()
     } else if (gender == "b") {
         for (let index2 = 0; index2 <= boyList.length - 1; index2++) {
@@ -19,8 +20,9 @@ function pickNames (gender: string, letters: number) {
             }
         }
         if (numberOfNames == 0) {
-            game.splash("No name found")
+            game.splash("No names found")
         }
+        game.splash("Resetting generator...")
         game.reset()
     } else if (gender == "u") {
         for (let index3 = 0; index3 <= uniList.length - 1; index3++) {
@@ -30,8 +32,9 @@ function pickNames (gender: string, letters: number) {
             }
         }
         if (numberOfNames == 0) {
-            game.splash("No name found")
+            game.splash("No names found")
         }
+        game.splash("Resetting generator...")
         game.reset()
     } else {
         game.splash("Invalid input, try again.")
@@ -599,4 +602,4 @@ uniList = [
 "Frances"
 ]
 game.splash("Generate a baby name")
-pickNames(game.askForString("What gender?(g for Girl,b for Boy,or u for Unisex)", 1), game.askForNumber("How many letters in the name?", 1))
+pickNames(game.askForString("What gender?(g for Girl,b for Boy,or u for Unisex)", 1), game.askForNumber("How many letters?", 1))
